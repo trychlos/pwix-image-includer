@@ -26,11 +26,15 @@ Template.ImageIncluder.onRendered( function(){
     self.autorun(() => {
         const url = Template.currentData().imageUrl;
         if( url ){
-            const img = new Image();
-            img.addEventListener( 'load', () => self.APP.exists.set( true ));
-            img.addEventListener( 'error', () => self.APP.exists.set( false ));
-            img.src = url;
-            self.APP.img.set( img );
+            try {
+                const img = new Image();
+                img.addEventListener( 'load', () => self.APP.exists.set( true ));
+                img.addEventListener( 'error', () => self.APP.exists.set( false ));
+                img.src = url;
+                self.APP.img.set( img );
+            } catch( e ){
+                // do not display the error message
+            }
         }
     });
 
@@ -42,6 +46,11 @@ Template.ImageIncluder.onRendered( function(){
     self.autorun(() => {
         const height = Template.currentData().imageHeight || '11.5em';
         self.$( '.includer-picture' ).css({ height: height });
+    });
+
+    // track the content
+    self.autorun(() => {
+        //console.debug( 'url', Template.currentData().imageUrl, 'exists', self.APP.exists.get());
     });
 });
 
