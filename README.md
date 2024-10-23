@@ -60,7 +60,7 @@ The component is configurable with an object passed as an argument, which may co
 
 - `defaultIcon`:
 
-    The name of the Font Awesome default svg, defaulting to 'fa-user'.
+    The name of the Font Awesome default svg, defaulting to 'fa-font-awesome'.
 
 - `imageWidth`:
 

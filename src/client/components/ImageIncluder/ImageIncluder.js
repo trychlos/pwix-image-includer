@@ -48,7 +48,7 @@ Template.ImageIncluder.onRendered( function(){
 Template.ImageIncluder.helpers({
     // the name of the default svg, defaulting to 'fa-user'
     haveDefaultIcon(){
-        return this.defaultIcon || 'fa-user';
+        return this.defaultIcon || 'fa-font-awesome';
     },
 
     // whether we want have an input field for the image url
