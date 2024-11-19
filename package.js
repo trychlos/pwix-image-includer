@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:image-includer',
-    version: '1.0.0-rc',
+    version: '1.0.0',
     summary: 'A Blaze component which provides a dynamic image includer',
     git: 'https://github.com/trychlos/pwix-image-includer',
     documentation: 'README.md'
